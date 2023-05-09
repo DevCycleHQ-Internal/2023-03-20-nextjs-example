@@ -131,8 +131,7 @@ export async function getServerSideProps(context: any) {
   const dvcClient = await getDVCClient()
   const user = { user_id: "my_user" }
 
-  const variables = await dvcClient.allVariables(user);
-
+  const variables = dvcClient.allVariables(user);
   return {
     props: { variables },
   }
